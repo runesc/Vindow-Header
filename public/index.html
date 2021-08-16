@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      html,
+      body,
+      header,
+      #root,
+      canvas.webgl {
+        min-height: 100vh;
+      }
+      canvas.webgl {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark pt-3">
+        <div class="container">
+          <a href="#" class="navbar-brand">
+            <img
+              src="https://ik.imagekit.io/kummiktgaiq/logo_aCw6AlHWo.png"
+              alt="logo"
+              class="d-inline-block align-text-top responsive-image"
+              id="app-logo"
+            />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Solutions</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Newsroom</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link"
+                  >Login
+                  <i class="fas fa-arrow-right text-success fsize-80"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link p-0">
+                  <button type="button" class="btn btn-success">
+                    Start My Trial
+                  </button>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <header>
+        <div class="container">
+          <div class="header-content text-center w-100">
+            <span class="transparency text-success pb-2"
+              >Transparency leads to trust</span
+            >
+            <span class="vindow-title pb-2"
+              >Vindow the marketplace where hotels and buyers create value</span
+            >
+            <ul class="list pt-2">
+              <li class="list-element">RFP Creation</li>
+              <li class="list-element">Contract Management</li>
+              <li class="list-element">Data Intelligence</li>
+            </ul>
+            <button type="button" class="btn btn-success mt-1">
+              Start My Trial
+            </button>
+          </div>
+        </div>
+        <div class="scene-container"></div>
+      </header>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/480e507c55.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

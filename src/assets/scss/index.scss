@@ -1,0 +1,182 @@
+@font-face {
+  font-family: 'segoeui-regular';
+  src: url('../fonts/segoeui-regular.ttf');
+}
+@font-face {
+  font-family: 'segoeui-bold';
+  src: url('../fonts/segoeui-bold.ttf');
+}
+@font-face {
+  font-family: 'segoeui-regular-italic';
+  src: url('../fonts/segoeui-regular-italic.ttf');
+}
+@font-face {
+  font-family: 'segoeui-light';
+  src: url('../fonts/segoeui-light.ttf');
+}
+@font-face {
+  font-family: 'segoeu-bold-italic';
+  src: url('../fonts/segoeu-bold-italic.ttf');
+}
+@font-face {
+  font-family: 'segui-light-italic';
+  src: url('../fonts/segui-light-italic.ttf');
+}
+@font-face {
+  font-family: 'segui-semibold';
+  src: url('../fonts/segui-semibold.ttf');
+}
+@font-face {
+  font-family: 'segui-semibold-italic';
+  src: url('../fonts/segui-semibold-italic.ttf');
+}
+
+@import '~bootstrap/scss/bootstrap';
+
+//** Vindow Globals */
+.btn-success {
+  font-family: 'segoeui-bold';
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.53px;
+  text-align: left;
+  color: #fff;
+  border-radius: 5.5px;
+  background-color: #15d4be;
+  padding: 8.1px 17.4px 11.1px 17.6px;
+  border: none;
+  box-shadow: 0 2.8px 2.2px rgba(21, 212, 190, 0.034),
+    0 6.7px 5.3px rgba(21, 212, 190, 0.048),
+    0 12.5px 10px rgba(21, 212, 190, 0.06),
+    0 10.3px 10.9px rgba(21, 212, 190, 0.072),
+    0 10.8px 10.4px rgba(21, 212, 190, 0.086),
+    0 5px 5px rgba(21, 212, 190, 0.12);
+}
+.btn-success:hover {
+  background-color: #15d4be;
+}
+.text-success {
+  color: #15d4be !important;
+}
+.fsize-80 {
+  font-size: 0.8rem !important;
+}
+
+//* Vindow Navbar */
+
+.navbar {
+  position: absolute !important;
+  z-index: 10;
+  width: 100%;
+}
+.navbar-brand {
+  padding: 0 !important;
+}
+img#app-logo {
+  max-width: 80%;
+}
+a,
+.nav-link {
+  color: #4d5e7c !important;
+  font-family: 'segoeui-bold';
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.53px;
+  text-align: left;
+  color: #4d5e7c;
+}
+a.nav-link {
+  padding-right: 1.5rem !important;
+}
+
+//** Vindow Header */
+.transparency {
+  font-family: 'segui-semibold';
+  display: block !important;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: 1.8px;
+  margin: 5px 0px 10px 0px;
+}
+
+ul.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+li.list-element + li.list-element::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.5ch;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #15d4be;
+}
+//* Vindow Head*/
+.header-content {
+  position: absolute;
+  z-index: 10;
+  top: 13%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -13%);
+  transform: translate(-50%, -13%);
+}
+.vindow-title {
+  font-family: 'segoeui-light';
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4d5e7c;
+  font-size: 26px;
+}
+
+.list-element {
+  font-size: 36px;
+  font-family: 'segoeui-bold';
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4d5e7c;
+}
+
+.scene-container {
+  width: 100%;
+  height: 67vh;
+  position: absolute;
+  z-index: 0;
+  top: 43vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -10vh);
+  transform: translate(-50%, -10vh);
+  background-image: url(https://ik.imagekit.io/kummiktgaiq/Vindow_Banner_Home_CUT_SsaEx04OUDC.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+// Laptop Display
+@media (max-width: 1300px) {
+  .scene-container {
+    height: 60vh;
+    top: 49vh;
+  }
+}
