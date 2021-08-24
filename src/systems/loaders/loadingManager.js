@@ -12,7 +12,8 @@ const globalLoader = () => {
     () => {
       window.setTimeout(() => {
         cover.classList.add('ended')
-        body.style.overflow = 'auto !important'
+        console.log()
+        body.classList.add('overflow-auto')
       }, 500)
     },
 

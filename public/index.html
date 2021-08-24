@@ -18,7 +18,7 @@
 
     <!-- preloader startup config -->
     <style>
-      html {
+      body {
         overflow: hidden !important;
       }
       .cover {
@@ -117,10 +117,10 @@
     </style>
   </head>
 
-  <body>
+  <body style="overflow: hidden">
     <!--
-      Please copy everything that is inside the root div and import the files from the assets folder
-    -->
+		Please copy everything that is inside the root div and import the files from the assets folder
+	-->
     <div id="root">
       <!-- preloader (do not delete) -->
       <div class="cover">
@@ -141,10 +141,7 @@
       </div>
       <header class="pt-4">
         <!-- Banner texts -->
-        <div
-          class="container pt-4 p-0 text-center"
-          style="padding-bottom: 1.8rem !important"
-        >
+        <div class="container p-0 text-center">
           <div class="text-container">
             <span class="transparency text-success pb-2"
               >Transparency leads to trust</span
@@ -219,7 +216,7 @@
             </div>
           </div>
         </div>
-        <button class="lg-d-none btn btn-success mb-3">Start My Trial</button>
+        <button class="lg-d-none btn btn-success">Start My Trial</button>
       </header>
     </div>
 
