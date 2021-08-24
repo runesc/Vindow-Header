@@ -6,7 +6,7 @@
   "author": "Luis Alfredo",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
+    "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint . src config || true"
   },
@@ -55,9 +55,6 @@
   "dependencies": {
     "bootstrap": "^5.0.1",
     "file-loader": "^6.2.0",
-    "glsl-shader-loader": "^0.1.6",
-    "gltf-webpack-loader": "^1.0.6",
-    "gsap": "^3.7.0",
     "three": "^0.128.0"
   }
 }

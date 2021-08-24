@@ -7,31 +7,24 @@
   src: url('../fonts/segoeui-bold.ttf');
 }
 @font-face {
-  font-family: 'segoeui-regular-italic';
-  src: url('../fonts/segoeui-regular-italic.ttf');
-}
-@font-face {
   font-family: 'segoeui-light';
   src: url('../fonts/segoeui-light.ttf');
-}
-@font-face {
-  font-family: 'segoeu-bold-italic';
-  src: url('../fonts/segoeu-bold-italic.ttf');
-}
-@font-face {
-  font-family: 'segui-light-italic';
-  src: url('../fonts/segui-light-italic.ttf');
 }
 @font-face {
   font-family: 'segui-semibold';
   src: url('../fonts/segui-semibold.ttf');
 }
-@font-face {
-  font-family: 'segui-semibold-italic';
-  src: url('../fonts/segui-semibold-italic.ttf');
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import '~bootstrap/scss/bootstrap';
+$green: #15d4be;
+$gray: #4d5e7c;
+$white: #fff;
+
+html,
+body,
+#root {
+  height: 100%;
+}
 
 //** Vindow Globals */
 .btn-success {
@@ -42,9 +35,9 @@
   line-height: 1.2;
   letter-spacing: 0.53px;
   text-align: left;
-  color: #fff;
+  color: $white;
   border-radius: 5.5px;
-  background-color: #15d4be;
+  background-color: $green;
   padding: 8.1px 17.4px 11.1px 17.6px;
   border: none;
   box-shadow: 0 2.8px 2.2px rgba(21, 212, 190, 0.034),
@@ -55,46 +48,39 @@
     0 5px 5px rgba(21, 212, 190, 0.12);
 }
 .btn-success:hover {
-  background-color: #15d4be;
+  background-color: $green;
 }
 .text-success {
-  color: #15d4be !important;
+  color: $green !important;
 }
 .fsize-80 {
   font-size: 0.8rem !important;
 }
+.btn-check:checked + .btn-success,
+.btn-check:active + .btn-success,
+.btn-success:active,
+.btn-success.active,
+.show > .btn-success.dropdown-toggle {
+  background-color: $green;
+  border-color: $green;
+}
+.btn-check:focus + .btn-success,
+.btn-success:focus {
+  background-color: $green;
+  border-color: $green;
+}
 
-//* Vindow Navbar */
+.btn-check:focus + .btn-success,
+.btn-success:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
 
-.navbar {
-  position: absolute !important;
-  z-index: 10;
+header {
   width: 100%;
 }
-.navbar-brand {
-  padding: 0 !important;
-}
-img#app-logo {
-  max-width: 80%;
-}
-a,
-.nav-link {
-  color: #4d5e7c !important;
-  font-family: 'segoeui-bold';
-  font-size: 16px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 0.53px;
-  text-align: left;
-  color: #4d5e7c;
-}
-a.nav-link {
-  padding-right: 1.5rem !important;
-}
 
-//** Vindow Header */
+// Header text container
 .transparency {
   font-family: 'segui-semibold';
   display: block !important;
@@ -106,6 +92,21 @@ a.nav-link {
   line-height: 1.56;
   letter-spacing: 1.8px;
   margin: 5px 0px 10px 0px;
+}
+.header-content {
+  position: relative;
+  z-index: 10;
+}
+.vindow-title {
+  font-family: 'segoeui-light';
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: $gray;
+  font-size: 26px;
 }
 
 ul.list {
@@ -123,31 +124,11 @@ li.list-element + li.list-element::before {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background-color: #15d4be;
-}
-//* Vindow Head*/
-.header-content {
-  position: absolute;
-  z-index: 10;
-  top: 13%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -13%);
-  transform: translate(-50%, -13%);
-}
-.vindow-title {
-  font-family: 'segoeui-light';
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #4d5e7c;
-  font-size: 26px;
+  background-color: $green;
 }
 
 .list-element {
-  font-size: 36px;
+  font-size: 35px;
   font-family: 'segoeui-bold';
   font-weight: bold;
   font-stretch: normal;
@@ -155,28 +136,311 @@ li.list-element + li.list-element::before {
   line-height: 1.2;
   letter-spacing: normal;
   text-align: center;
-  color: #4d5e7c;
+  color: $gray;
+}
+.lg-d-none {
+  display: none;
 }
 
-.scene-container {
+.robot {
+  top: 20%;
+  transform: translate(-35%, -5%);
+}
+
+.dimage {
+  display: none;
+}
+
+.label-container {
+  min-height: 40vh;
+  max-width: 50%;
+  margin: auto;
+  position: relative;
+  opacity: 0;
+}
+.label-container.show {
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
+  opacity: 1;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.circular_image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.circular_image img {
   width: 100%;
-  height: 67vh;
-  position: absolute;
-  z-index: 0;
-  top: 43vh;
-  left: 50%;
-  -webkit-transform: translate(-50%, -10vh);
-  transform: translate(-50%, -10vh);
-  background-image: url(https://ik.imagekit.io/kummiktgaiq/Vindow_Banner_Home_CUT_SsaEx04OUDC.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
+}
+.col-lg-8.hotels {
+  padding-top: 2.1em;
+  padding-right: 0.4em;
+}
+.label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: $gray;
+  font-size: 16px;
+}
+span.btn.btn-light.label {
+  background: $white;
+  cursor: default;
+}
+span.btn.btn-light.label:hover {
+  background: $white;
+  color: $gray;
+}
+span.btn.btn-light.label:active {
+  color: $gray;
+}
+.btn-check:focus + .btn-light,
+.btn-light:focus {
+  box-shadow: none;
+  outline: 0;
+  color: $gray;
+}
+.btn-check:checked + .btn-light:focus,
+.btn-check:active + .btn-light:focus,
+.btn-light:active:focus,
+.btn-light.active:focus,
+.show > .btn-light.dropdown-toggle:focus {
+  box-shadow: none;
+}
+.yellow-shadow {
+  box-shadow: 0px 6px 12px 0px rgba(245, 219, 71, 1);
+  -webkit-box-shadow: 0px 6px 12px 0px rgba(245, 219, 71, 1);
+  -moz-box-shadow: 0px 6px 12px 0px rgba(245, 219, 71, 1);
+}
+.green-shadow {
+  box-shadow: 0px 4px 12px 0px rgba(45, 155, 136, 1);
+  -webkit-box-shadow: 0px 4px 12px 0px rgba(45, 155, 136, 1);
+  -moz-box-shadow: 0px 4px 12px 0px rgba(45, 155, 136, 1);
+}
+.red-shadow {
+  box-shadow: 0px 3px 12px 0px rgba(206, 116, 147, 1);
+  -webkit-box-shadow: 0px 3px 12px 0px rgba(206, 116, 147, 1);
+  -moz-box-shadow: 0px 3px 12px 0px rgba(206, 116, 147, 1);
+}
+.gray-shadow {
+  box-shadow: 0px 3px 12px 0px rgba(145, 155, 173, 1);
+  -webkit-box-shadow: 0px 3px 12px 0px rgba(145, 155, 173, 1);
+  -moz-box-shadow: 0px 3px 12px 0px rgba(145, 155, 173, 1);
+}
+.blue-shadow {
+  box-shadow: 0px 3px 12px 0px rgba(51, 153, 204, 1);
+  -webkit-box-shadow: 0px 3px 12px 0px rgba(51, 153, 204, 1);
+  -moz-box-shadow: 0px 3px 12px 0px rgba(51, 153, 204, 1);
 }
 
-// Laptop Display
-@media (max-width: 1300px) {
+/* Ipad*/
+@media screen and (min-width: 768px) and (min-height: 1024px) {
+  .d-image {
+    top: 35% !important;
+  }
+}
+
+/* Tiny phones*/
+@media (max-width: 420px) and (max-height: 640px) {
+  .transparency {
+    font-size: 16px !important;
+  }
+  .vindow-title {
+    font-size: 23px !important;
+  }
+  ul.list,
+  li.list-element {
+    padding: 0 !important;
+    margin: 0;
+  }
+  .list-element {
+    font-size: 31px;
+  }
+}
+
+/* large screen phone view*/
+@media (max-width: 768px) and (max-width: 992px) {
+  header {
+    background-image: url(https://ik.imagekit.io/panamera/Vindow/Background_blf_tvBM9.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    min-height: 90vh;
+  }
+  .text-container {
+    min-height: 40vh;
+  }
+  .header-content {
+    padding: 0 !important;
+  }
+  .transparency {
+    font-size: 19px;
+  }
+  .vindow-title {
+    padding: 8px !important;
+  }
+
+  ul {
+    margin-top: 0.6em;
+  }
+
+  ul.list {
+    list-style: none;
+    display: block;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  li.list-element {
+    padding: 3px;
+  }
+
+  li.list-element + li.list-element::before {
+    display: none;
+    background-color: transparent;
+  }
+  .sm-d-none {
+    display: none;
+  }
+  .lg-d-none {
+    display: block;
+    width: 85%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    height: 56px;
+    font-size: 1.15rem;
+  }
   .scene-container {
-    height: 60vh;
-    top: 49vh;
+    min-height: 40vh;
+  }
+  .robot {
+    top: 20%;
+    transform: translate(-35%, -5%);
+    max-width: 80%;
+    max-height: 80%;
+  }
+  .dimage {
+    display: inline;
+    width: 83%;
+    position: absolute;
+    right: 0;
+  }
+  .sm-d-none {
+    display: none;
+  }
+}
+// Laptop 13 inch
+@media (min-width: 769px) and (max-width: 1399px) {
+  header {
+    background-image: url(https://ik.imagekit.io/panamera/Vindow/prueba3_h3RlQ5UIs.png);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .transparency,
+  .vindow-title,
+  .list {
+    padding: 0 !important;
+  }
+  .list-element {
+    padding-top: 0.25rem !important;
+  }
+  .scene-container {
+    min-height: 61vh;
+  }
+  .robot {
+    top: 20%;
+    transform: translate(-5%, 9%);
+    max-width: 60%;
+    max-height: 60%;
+  }
+  .label-container {
+    min-height: 40vh;
+    max-width: 60%;
+    margin: auto;
+    top: 20%;
+    left: 7%;
+    transform: translate(0, -7%);
+    opacity: 0;
+  }
+}
+
+// Desktop
+@media (min-width: 1400px) {
+  header {
+    background-image: url(https://ik.imagekit.io/panamera/Vindow/prueba3_h3RlQ5UIs.png);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .scene-container {
+    min-height: 70vh;
+  }
+  .label-container {
+    min-height: 40vh;
+    max-width: 60%;
+    margin: auto;
+    top: 20%;
+    transform: translate(0, 25%);
+    opacity: 0;
+  }
+  .robot {
+    top: 30%;
+    transform: translate(5%, 40%);
+    max-width: 50%;
+    max-height: 50%;
   }
 }
